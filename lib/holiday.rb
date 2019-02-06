@@ -97,9 +97,13 @@ def all_holidays_with_bbq(holiday_hash)
   holiday_names_array = []
   
   holiday_hash.each do | key, data |
-    
+    data.each do | attribute, value |
+      if value.include?("BBQ")
+        holiday_names_array << attribute
+      end 
+    end 
   end 
-
+  holiday_names_array
 end
 
 
